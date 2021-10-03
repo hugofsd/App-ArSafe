@@ -1,27 +1,77 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      QUALIDADE DO AR
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <div class="back-info ion-text-center">
+    <img class="logo" src="../../assets/logo.png">
+  </div> <br>
+
+  <div class="center">
+    <ion-spinner name="crescent" [hidden]="!carregando"></ion-spinner>
+  </div>
+
+  <div [hidden]="carregando">
 
   
-  <ion-tabs>
+    <ion-card>
 
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button routerLink="/tabs/tab1">
-        <ion-icon color="primary" name="home"></ion-icon>
-        <ion-label>Home</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  
-  </ion-tabs>
+      <ion-card-header>
+        <span style="float: right;">
+          <ion-badge color="success">Bom</ion-badge>
+          <!-- <ion-badge  color="secondary">Moderado</ion-badge>
+          <ion-badge color="tertiary">	Insalubre para Grupos Sensíveis</ion-badge>
+          <ion-badge color="warning">Insalubre</ion-badge>
+          <ion-badge  color="danger">Muito Insalubre</ion-badge>
+          <ion-badge color="dark">você esta vivo?</ion-badge> -->
+        </span> <BR>
+
+          <ion-card-title>
+            <p><b>Índice de Qualidade do Ar (IQA): {{dados.data.current.pollution.aqius}} </b></p>
+          </ion-card-title>
+      </ion-card-header>
+
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><b>Localização: </b></ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <p><b>Cidade: {{dados.data.city}}</b></p>
+        <p><b>Estado: {{dados.data.state}} </b></p>
+        <p><b>Pais:  {{dados.data.country}}</b> </p>
+      </ion-card-content>
+    </ion-card>
+
+    
+
+
+ 
+
+  <ion-card>
+    <ion-item detail >
+      <ion-icon  color="primary" slot="start" name="help"></ion-icon>
+      <ion-label color="primary"><b>Ajuda</b></ion-label>
+    </ion-item>
+  </ion-card>
+
+</div>
+
 </ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLink="/tabs/tab1">
+      <ion-icon color="primary" name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

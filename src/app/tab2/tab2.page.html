@@ -7,21 +7,64 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  
+
+  <div class="back-info ion-text-center">
+    <img class="logo" src="../../assets/logo.png">
+  </div>
+
+  <div class="center">
+    <ion-spinner name="crescent" [hidden]="!carregando"></ion-spinner>
+  </div>
+  
+  
+
+  
+  <ion-card [hidden]="carregando" >
+
+    <ion-card-header>
+      <ion-card-title><b>Relatório climático:</b></ion-card-title>
+    </ion-card-header> 
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title><b>Localização: </b></ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <p><b>Cidade: {{dados.data.city}}</b></p>
+      <p><b>Estado: {{dados.data.state}} </b></p>
+      <p><b>Pais:  {{dados.data.country}}</b> </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title><b>Clima: </b></ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <p><b>Umidade do ar: {{dados.data.current.weather.hu}}% </b></p>
+      <p><b>Temperatura em Celsius: {{dados.data.current.weather.tp}} </b> </p>
+      <p><b>Pressão atmosférica em HPA: {{dados.data.current.weather.pr}}</b> </p>
+      <p><b>Velocidade do vento (m / s): {{dados.data.current.weather.ws}} </b> </p>
+      <p><b>Direção do vento: </b> {{dados.data.current.weather.wd}}, como um ângulo de 360​​°</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-card>
+  
+
+
+
 </ion-content>
 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button  routerLink="/tabs/tab1"  >
-      <ion-icon name="home"></ion-icon>
+    <ion-tab-button  routerLink="/home"  >
+      <ion-icon color="primary" name="home"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
-
