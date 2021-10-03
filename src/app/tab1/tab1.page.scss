@@ -6,11 +6,12 @@
         display: block;
        }
        .logoInferior{
-        width: 330px;
+        width: 300px;
         margin: 20px auto ; // vertical
         display: block;
-        margin-bottom: 4px;
-        margin-left: 32px;
+        align-items: center;
+        // margin-bottom: 4px;
+        // margin-left: 32px;
        } 
     }
     }
@@ -44,3 +45,5 @@
         .title-img {
           max-height: 35px;
         }
+
+  
