@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
 
-  
+
 
   <div class="back-info ion-text-center">
     <img class="logo" src="../../assets/logo.png">
@@ -17,53 +17,75 @@
   <div class="center">
     <ion-spinner name="crescent" [hidden]="!carregando"></ion-spinner>
   </div>
-  
-  
+
+
   <div *ngIf="!carregando">
 
+
+    <ion-card>
+
+      <ion-card-header>
+        <ion-card-title><b>RELATÓRIO CLIMÁTICO:</b></ion-card-title>
+      </ion-card-header>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title><b>
+            <ion-badge  color="primary"> LOCALIZAÇÃO</ion-badge>
+         </b></ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <p><b>Cidade: {{dados.data.city}}</b></p>
+          <p><b>Estado: {{dados.data.state}} </b></p>
+          <p><b>Pais: {{dados.data.country}}</b> </p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title><b>
+            <ion-badge  color="primary">CLIMA</ion-badge>
+         </b></ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <p><b>Umidade do ar: {{dados.data.current.weather.hu}}% </b></p>
+          <p><b>Temperatura em Celsius: {{dados.data.current.weather.tp}} </b> </p>
+          <p><b>Pressão atmosférica em HPA: {{dados.data.current.weather.pr}}</b> </p>
+          <p><b>Velocidade do vento (m / s): {{dados.data.current.weather.ws}} </b> </p>
+          <p><b>Direção do vento: </b> {{dados.data.current.weather.wd}}, como um ângulo de 360​​°</p>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-card>
+
+  </div>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="star" ></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="bottom" >
+      <ion-fab-button (click)="atualizacao()">
+        <ion-icon name="information-circle" color="primary"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button (click)="ar()">
+        <ion-icon name="nuclear" color="primary"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
   
-  <ion-card >
+  </ion-fab>
 
-    <ion-card-header>
-      <ion-card-title><b>Relatório climático:</b></ion-card-title>
-    </ion-card-header> 
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title><b>Localização: </b></ion-card-title>
-    </ion-card-header>
-    
-    <ion-card-content>
-      <p><b>Cidade: {{dados.data.city}}</b></p>
-      <p><b>Estado: {{dados.data.state}} </b></p>
-      <p><b>Pais:  {{dados.data.country}}</b> </p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title><b>Clima: </b></ion-card-title>
-    </ion-card-header>
-    
-    <ion-card-content>
-      <p><b>Umidade do ar: {{dados.data.current.weather.hu}}% </b></p>
-      <p><b>Temperatura em Celsius: {{dados.data.current.weather.tp}} </b> </p>
-      <p><b>Pressão atmosférica em HPA: {{dados.data.current.weather.pr}}</b> </p>
-      <p><b>Velocidade do vento (m / s): {{dados.data.current.weather.ws}} </b> </p>
-      <p><b>Direção do vento: </b> {{dados.data.current.weather.wd}}, como um ângulo de 360​​°</p>
-    </ion-card-content>
-  </ion-card>
-
-</ion-card>
-  
-</div>
 
 
 </ion-content>
 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button  routerLink="/tabs/tab1"  >
+    <ion-tab-button routerLink="/tabs/tab1">
       <ion-icon color="primary" name="home"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>

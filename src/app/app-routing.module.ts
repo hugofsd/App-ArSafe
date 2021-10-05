@@ -11,10 +11,8 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },  {
-    path: 'extra',
-    loadChildren: () => import('./extra/extra.module').then( m => m.ExtraPageModule)
   },
+
 
 
   // {

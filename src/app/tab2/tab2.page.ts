@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { Geolocation } from '@capacitor/geolocation';
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from 'src/service/api.service';
-import { ToastController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -23,6 +23,7 @@ export class Tab2Page {
     public router: Router,
     public apiService: ApiService,
     private toastController: ToastController,
+    public alertController: AlertController
   ) {}
 
   // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
@@ -31,11 +32,43 @@ export class Tab2Page {
    this.getLocation();
   }
 
+  async atualizacao() {
+
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'ArSafe:',
+      message: `
+   
+      <br><br>
+      <b>TEMA: </b>DESENVOLVIMENTO DE UMA APLICAÇÃO DE SISTEMA DISTRIBUÍDO 
+      PARA DISPOSITIVO MÓVEL. 
+      <br><br>
+      <b>DISCIPLINA VINCULADA: </b> Sistemas Distribuídos – SD.
+      <br><br>
+      <b>PROPOSTA: </b>Acompanhamento de índice de qualidade do ar (IQA)
+       mapeada por geodocalização.
+      <br><br>
+      <b>EXTRA: </b>Relatório climatico da localização do usuário.
+      <br><br>
+      <b>ALUNO:</b> Hugo França da Silva Dias Pereira.
+      <br><br>
+      <b>RA:</b> N2393D-2.
+      <br><br>
+      <b>UNIDADE:</b> Campus Anchieta.
+      <br><br>
+      <b>CURSO:</b> CIENCIA DA COMPUTAÇÃO.
+      <br><br>
+      Mais detalhes no GitHub...
+      ` ,
+      buttons: ['Entendi']
+    });
+    await alert.present();
+  }
 
 
 
-  sair(){
-    this.router.navigate(['/home']);
+  ar(){
+    this.router.navigate(['/tabs/tab3']);
   }
 
   async getLocation() {

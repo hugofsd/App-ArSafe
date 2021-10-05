@@ -18,64 +18,99 @@
   </div>
 
 
-  
-  <div [hidden]="carregando">
+
+
 
     <div *ngIf="!carregando">
+      
 
-  
-    <ion-card>
 
-      <ion-card-header>
-        <span style="float: right;">
-          <ion-badge color="success">Bom</ion-badge>
-          <!-- <ion-badge  color="secondary">Moderado</ion-badge>
-          <ion-badge color="tertiary">	Insalubre para Grupos Sensíveis</ion-badge>
-          <ion-badge color="warning">Insalubre</ion-badge>
-          <ion-badge  color="danger">Muito Insalubre</ion-badge>
-          <ion-badge color="dark">você esta vivo?</ion-badge> -->
-        </span> <BR>
+      <ion-card>
+
+        <ion-card-header>
+          <span style="float: right;">
+            <!-- <p><b>Status: </b></p> -->
+           <ion-badge  color="primary">  {{statusTwo}}</ion-badge>
+          </span> <BR>
 
           <ion-card-title>
             <p><b>Índice de Qualidade do Ar (IQA): {{dados.data.current.pollution.aqius}} </b></p>
           </ion-card-title>
-      </ion-card-header>
+        </ion-card-header>
 
-    </ion-card>
+      </ion-card>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title><b>Localização: </b></ion-card-title>
-      </ion-card-header>
+
+      <ion-card>
+
+
+        <ion-card-header>
+          <ion-card-title><b>
+            <ion-badge  color="primary"> LOCALIZAÇÃO</ion-badge>
+         </b></ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <p><b>Cidade: {{dados.data.city}}</b></p>
+          <p><b>Estado: {{dados.data.state}} </b></p>
+          <p><b>Pais: {{dados.data.country}}</b> </p>
+        </ion-card-content>
+      </ion-card>
+
       
-      <ion-card-content>
-        <p><b>Cidade: {{dados.data.city}}</b></p>
-        <p><b>Estado: {{dados.data.state}} </b></p>
-        <p><b>Pais:  {{dados.data.country}}</b> </p>
-      </ion-card-content>
-    </ion-card>
+      <ion-card>
 
-    
+        <ion-card-header>
+          <ion-card-title><b>
+            <ion-badge  color="primary">COORDENADAS</ion-badge>
+          </b></ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <p><b>Latitude: {{latitude}}</b></p>
+          <p><b>Longitude: {{longitude}} </b></p>
+        </ion-card-content>
+      </ion-card>
+
+    </div>
 
 
  
 
-  <ion-card>
-    <ion-item detail >
-      <ion-icon  color="primary" slot="start" name="help"></ion-icon>
-      <ion-label color="primary"><b>Ajuda</b></ion-label>
-    </ion-item>
-  </ion-card>
-</div>
-</div>
+
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="star" ></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="bottom" >
+      <ion-fab-button (click)="atualizacao()">
+        <ion-icon name="information-circle" color="primary"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button (click)="clima()">
+        <ion-icon name="rainy" color="primary"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  
+  </ion-fab>
+
+  
 
 </ion-content>
 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button  routerLink="/tabs/tab1"  >
+    <ion-tab-button routerLink="/tabs/tab1">
       <ion-icon color="primary" name="home"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
+
+
+
+
+
+

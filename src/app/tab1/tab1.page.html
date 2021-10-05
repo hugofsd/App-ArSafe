@@ -54,29 +54,21 @@
 
  <ion-card class="cardPrincipal">
   <ion-list lines="full">
-    <ion-item detail routerLink="/tabs/tab2">
-      <ion-icon  color="primary" slot="start" name="rainy"></ion-icon>
-      <ion-label color="primary"><b>CLIMA</b></ion-label>
-    </ion-item>
-
-    
 
     <ion-item detail routerLink="/tabs/tab3">
       <ion-icon  color="primary" slot="start" name="nuclear"></ion-icon>
       <ion-label color="primary"><b>QUALIDADE DO AR</b></ion-label>
     </ion-item>
 
-    <ion-item detail >
+    <ion-item detail routerLink="/tabs/tab2">
+      <ion-icon  color="primary" slot="start" name="rainy"></ion-icon>
+      <ion-label color="primary"><b>CLIMA</b></ion-label>
+    </ion-item>
+
+    <ion-item detail (click)="atualizacao()">
       <ion-icon  color="primary" slot="start" name="information-circle"></ion-icon>
       <ion-label color="primary"><b>INFORMAÇÕES</b></ion-label>
     </ion-item>
-
-    <ion-item detail routerLink="/extra">
-      <ion-icon  color="primary" slot="start" name="star"></ion-icon>
-      <ion-label color="primary"><b>EXTRAS</b></ion-label>
-    </ion-item>
-
-  
    
     <!-- <ion-item routerLink="/reparo" detail>
       <ion-icon   color="primary" slot="start" name="construct-outline"></ion-icon>
