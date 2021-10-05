@@ -17,7 +17,11 @@
     <ion-spinner name="crescent" [hidden]="!carregando"></ion-spinner>
   </div>
 
+
+  
   <div [hidden]="carregando">
+
+    <div *ngIf="!carregando">
 
   
     <ion-card>
@@ -62,14 +66,14 @@
       <ion-label color="primary"><b>Ajuda</b></ion-label>
     </ion-item>
   </ion-card>
-
+</div>
 </div>
 
 </ion-content>
 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button routerLink="/tabs/tab1">
+    <ion-tab-button  routerLink="/tabs/tab1"  >
       <ion-icon color="primary" name="home"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>

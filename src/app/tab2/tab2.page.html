@@ -19,9 +19,10 @@
   </div>
   
   
+  <div *ngIf="!carregando">
 
   
-  <ion-card [hidden]="carregando" >
+  <ion-card >
 
     <ion-card-header>
       <ion-card-title><b>Relatório climático:</b></ion-card-title>
@@ -55,14 +56,14 @@
 
 </ion-card>
   
-
+</div>
 
 
 </ion-content>
 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button  routerLink="/home"  >
+    <ion-tab-button  routerLink="/tabs/tab1"  >
       <ion-icon color="primary" name="home"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
