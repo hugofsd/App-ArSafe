@@ -3,5 +3,5 @@ APS-Oitavo-Semestre: Desenvolvido para consultas climáticas e índice de qualid
 
 ##ARSAFE - CLIMA E QUALIDADE DO AR
 
-## App
+## Aplicativo em funcionamento: 
 [![Demo CountPages alpha](https://j.gifs.com/VvNXYM.gif)]
